@@ -1,0 +1,11 @@
+{% extends 'base/base.html' %}
+{% block content %}
+    <p>My name is {{ name }}</p>
+    <p>Age: {{ age }}</p>
+    {% if age > 18 %}
+        <p>You are of age</p>
+    {% endif %}
+    {% for item in list %}
+        <p>{{ item }}</p>
+    {% endfor %}
+{% endblock %}
