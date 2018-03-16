@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename = 'css/styles.css' ) }}" />
 </head>
 <body>
     <p>From template base.html</p>
     {% block content %}{% endblock %}
+    {% from "macros/_macro.html" import lorem_ipsum %}
+        {{ lorem_ipsum() }}
 </body>
 </html>
