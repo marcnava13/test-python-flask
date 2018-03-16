@@ -1,11 +1,13 @@
 from flask import Flask
 from flask import render_template
 from flask import request
-
+from flask_wtf import CsrfProtect
 import forms
 
 # app = Flask(__name__, template_folder = 'name_folder' )
 app = Flask(__name__)
+app.secret_key = 'YOUR_SECRET_KEY' # os.get('SECRET_KEY')
+csrf = CsrfProtect(app)
 
 @app.route('/', methods = ['GET', 'POST'])
 def index():
