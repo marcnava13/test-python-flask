@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="jumbotron">
+        <h1 class="display-4">Login</h1>
+        <hr class="my-4">
+        <p class="lead">
+            {% from "macros/forms/form.html" import render_form %}
+            {{ render_form(form) }}
+            <a class="btn btn-primary btn-lg" href="/" role="button"><i class="fas fa-home"></i>&nbsp;Home</a>
+        </p>
+    </div>
+{% endblock %}
