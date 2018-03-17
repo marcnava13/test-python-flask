@@ -9,6 +9,19 @@ app = Flask( __name__ )
 app.secret_key = 'YOUR_SECRET_KEY' # os.get('SECRET_KEY')
 csrf = CsrfProtect(app)
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template( '404.html' ), 404
+
+@app.before_request
+def before_request():
+    print 'before_request'
+
+@app.after_request
+def after_request(response):
+    print 'after_request'
+    return response
+
 @app.route('/', methods = [ 'GET' ])
 def index():
     if 'username' in session:
